@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+const paintings = await getCollection("paintings");
+const pageTitle = "Ladislav's gallery";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h1>Ladislav's gallery</h1>
+  <ul>
+    {
+      paintings.map((painting) => (
+        <li>
+          <a href={`/paintings/${painting.id}`}>{painting.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
