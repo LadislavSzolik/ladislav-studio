@@ -6,14 +6,34 @@ const pageTitle = "Ladislav's gallery";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1>Ladislav's gallery</h1>
-  <ul>
-    {
-      paintings.map((painting) => (
-        <li>
-          <a href={`/paintings/${painting.id}`}>{painting.data.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  <main class="main-container">
+    <div class="container page-section">
+      <div class="section-header">
+        <h2>Exhibition GZ Oerlikon</h2>
+        <p>Paintings from the 10th of January 2026 exhibition</p>
+      </div>
+      <div class="gallery-grid">
+        {
+          paintings.map((painting) => (
+            <a href={`/paintings/${painting.id}/`} class="gallery-item">
+              <div class="gallery-item-image">
+                <img class="gallery-item-img" src={painting.data.keyImage} alt={painting.data.title} />
+                <div class="gallery-overlay">
+                  <div>
+                    <h3>{painting.data.title}</h3>
+                    <p>{painting.data.year}</p>
+                    <p>{painting.data.dimensions}</p>
+                  </div>
+                  <p>
+                    CHF <span class="price">{painting.data.price}</span>
+                  </p>
+                  {painting.data.isSold && <span class="sold-tag">Sold</span>}
+                </div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </main>
 </BaseLayout>

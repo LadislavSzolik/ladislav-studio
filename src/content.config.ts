@@ -8,6 +8,9 @@ const paintings = defineCollection({
     price: z.number(),
     dimensions: z.string(),
     year: z.number(),
+    keyImage: z.string(),
+    detailImages: z.array(z.string()),
+    isSold: z.boolean().default(false),
   }),
 });
 

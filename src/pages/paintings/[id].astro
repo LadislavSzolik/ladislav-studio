@@ -2,18 +2,57 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
 export async function getStaticPaths() {
-  const posts = await getCollection("paintings");
-  return posts.map((post) => ({
-    params: { id: post.id },
-    props: { post },
+  const paintings = await getCollection("paintings");
+  return paintings.map((painting) => ({
+    params: { id: painting.id },
+    props: { painting },
   }));
 }
 
-const { post } = Astro.props;
-const { Content } = await render(post);
+const { painting } = Astro.props;
+const { Content } = await render(painting);
 ---
 
 <BaseLayout>
-  <h1>{post.data.title}</h1>
-  <Content />
+  <main class="main-container">
+    <div class="container">
+      <div class="detail-container">
+        <div>
+          <div class="key-image-container">
+            <img src={painting.data.keyImage} alt={`Detail of ${painting.data.title}`} />
+          </div>
+          {
+            painting.data.detailImages.length > 1 && (
+              <div class="thumbnail-gallery">
+                {painting.data.detailImages.map((image) => (
+                  <button>
+                    <img src={image} alt={`Detail of ${painting.data.title}`} />
+                  </button>
+                ))}
+              </div>
+            )
+          }
+        </div>
+
+        <!-- Details sidebar -->
+        <div class="details-sidebar">
+          <!-- Title and Year -->
+          <div>
+            <h1 class="detail-title">{painting.data.title}</h1>
+            <p class="detail-year">{painting.data.year}</p>
+          </div>
+
+          <!-- Price -->
+          <div class="price-section">
+            <p class="price-label">Price</p>
+            <p class="price-value">{painting.data.price}</p>
+          </div>
+          <!-- Description -->
+          <div class="description-box">
+            <p><Content /></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </BaseLayout>
