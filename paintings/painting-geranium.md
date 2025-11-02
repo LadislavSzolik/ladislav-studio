@@ -2,11 +2,12 @@
 title: 'Geranium'
 price: 49.99
 dimensions: '40x40'
+medium: Acrylic on canvas
 year: 2025
 keyImage: '/images/flower.webp'
 detailImages: 
    - '/images/flower.webp'
-   - '/images/flower.webp'
+   - '/images/baloons.webp'
    - '/images/flower.webp'
    - '/images/flower.webp'
    - '/images/flower.webp'

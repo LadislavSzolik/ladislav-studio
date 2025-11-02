@@ -2,6 +2,7 @@
 title: 'Reading girl'
 price: 49
 dimensions: '40x40'
+medium: Acrylic on canvas
 year: 2025
 keyImage: '/images/reading.webp'
 detailImages: 

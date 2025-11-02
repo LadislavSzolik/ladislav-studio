@@ -19,13 +19,13 @@ const { Content } = await render(painting);
       <div class="detail-container">
         <div>
           <div class="key-image-container">
-            <img src={painting.data.keyImage} alt={`Detail of ${painting.data.title}`} />
+            <img id="mainImage" src={painting.data.keyImage} alt={`Detail of ${painting.data.title}`} />
           </div>
           {
             painting.data.detailImages.length > 1 && (
               <div class="thumbnail-gallery">
                 {painting.data.detailImages.map((image) => (
-                  <button>
+                  <button class="thumbnail-button" data-src={image} data-alt={painting.data.title}>
                     <img src={image} alt={`Detail of ${painting.data.title}`} />
                   </button>
                 ))}

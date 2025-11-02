@@ -2,6 +2,7 @@
 title: 'Two friends at home'
 price: 49
 dimensions: '40x40'
+medium: Acrylic on canvas
 year: 2025
 keyImage: '/images/guitar.webp'
 detailImages: 
