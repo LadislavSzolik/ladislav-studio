@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import DetailSection from "../../components/DetailSection.astro";
 import { getCollection, render } from "astro:content";
 export async function getStaticPaths() {
   const paintings = await getCollection("paintings");
@@ -11,16 +12,19 @@ export async function getStaticPaths() {
 
 const { painting } = Astro.props;
 const { Content } = await render(painting);
+const pageTitle = painting.data.title;
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
   <main class="main-container">
     <div class="container">
       <div class="detail-container">
-        <div>
+        <div class="image-thumbnail-container">
+          <!-- Key Image -->
           <div class="key-image-container">
             <img id="mainImage" src={painting.data.keyImage} alt={`Detail of ${painting.data.title}`} />
           </div>
+          <!-- Thumbnails -->
           {
             painting.data.detailImages.length > 1 && (
               <div class="thumbnail-gallery">
@@ -36,20 +40,27 @@ const { Content } = await render(painting);
 
         <!-- Details sidebar -->
         <div class="details-sidebar">
-          <!-- Title and Year -->
+          <!-- Title -->
           <div>
             <h1 class="detail-title">{painting.data.title}</h1>
-            <p class="detail-year">{painting.data.year}</p>
           </div>
 
           <!-- Price -->
           <div class="price-section">
             <p class="price-label">Price</p>
-            <p class="price-value">{painting.data.price}</p>
+            <p class="price-value">CHF {painting.data.price}</p>
           </div>
+
+          <!-- Dimensions -->
+          <DetailSection label={"Dimensions"} value={painting.data.dimensions} />
+
+          <!-- Medium -->
+          <DetailSection label={"Mediums"} value={painting.data.mediums} />
+
           <!-- Description -->
           <div class="description-box">
-            <p><Content /></p>
+            <p class="desc-label">About the painting</p>
+            <p class="desc-value"><Content /></p>
           </div>
         </div>
       </div>

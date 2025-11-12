@@ -25,7 +25,6 @@ html,
 body {
   font-family: var(--font-body);
   font-size: 1.1rem;
-  background-color: var(--background);
   color: var(--foreground);
   line-height: 1.6;
 }
@@ -149,6 +148,20 @@ header h1 {
   }
 }
 
+/* Intro text */
+
+.exhibition-address,
+.exhibition-dates {
+  margin-top: 1rem;
+
+  & :nth-child(2) {
+    color: var(--foreground);
+  }
+  & a {
+    color: var(--accent);
+  }
+}
+
 /* Gallery Grid - Bento Box Style in the future...maybe */
 .gallery-grid {
   display: grid;
@@ -250,6 +263,13 @@ header h1 {
   opacity: 1;
 }
 
+/* Many more */
+.many-more {
+  text-align: center;
+  margin-block: 2rem;
+  color: var(--muted-foreground);
+}
+
 /* Details page */
 .detail-container {
   display: grid;
@@ -284,7 +304,7 @@ header h1 {
 /* Thumbnail Gallery */
 .thumbnail-gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 0.75rem;
   margin-top: 1.5rem;
 }
@@ -319,26 +339,24 @@ header h1 {
 .details-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 @media (min-width: 1024px) {
   .details-sidebar {
     position: sticky;
-    top: 2rem;
+    top: 1.5rem;
   }
 }
 
 .detail-section {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .detail-label {
   font-size: 0.875rem;
   color: var(--muted-foreground);
-  margin-bottom: 0.25rem;
 }
 
 .detail-value {
@@ -374,7 +392,6 @@ header h1 {
 .price-label {
   font-size: 0.875rem;
   color: var(--muted-foreground);
-  margin-bottom: 0.5rem;
 }
 
 .price-value {
@@ -385,15 +402,13 @@ header h1 {
 
 /* Description Box */
 .description-box {
-  background-color: rgba(var(--muted), 0.5);
-  border-radius: var(--radius);
-  padding: 1rem;
-  border: 1px solid var(--border);
-}
-
-.description-box p {
-  color: var(--foreground);
-  line-height: 1.6;
+  & .desc-label {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+  & .desc-value {
+    color: var(--foreground);
+  }
 }
 
 /* Footer */
@@ -404,7 +419,6 @@ footer {
   background-color: var(--card);
   border-top: 1px solid var(--border);
   padding: 3rem 1rem;
-  margin-top: 5rem;
 }
 
 footer .container {
@@ -447,4 +461,27 @@ footer .container {
   height: 1.25rem;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* About */
+.about {
+  color: var(--muted-foreground);
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding-block: 3rem;
+
+  & h2 {
+    margin-block-end: 1rem;
+  }
+  & h3 {
+    margin-block-end: 0.4rem;
+  }
+  & .mail-link {
+    text-decoration: none;
+    background-color: var(--accent);
+    color: var(--muted);
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+  }
 }
