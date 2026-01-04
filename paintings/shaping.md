@@ -1,12 +1,13 @@
 ---
 title: 'Shape and being shaped'
-price: 99
-dimensions: '40 W x 40 H cm'
+price: 300
+dimensions: '40 x 40 cm'
 mediums: Acrylic on canvas
 year: 2025
-keyImage: '/images/placeholder.webp'
+keyImage: '/images/shaping/shaping-01.webp'
 detailImages: 
-   - '/images/placeholder.webp'
+  - '/images/shaping/shaping-01.webp'
+  - '/images/shaping/shaping-02.webp'
 isSold: false
 visible: true
 ---

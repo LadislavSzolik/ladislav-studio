@@ -1,7 +1,7 @@
 ---
 title: 'Happy birthday'
-price: 90
-dimensions: '40 W x 40 H cm'
+price: 200
+dimensions: '40 width x 50 height cm'
 mediums: Acrylic on canvas
 year: 2025
 keyImage: '/images/balloons/balloon-01.webp'

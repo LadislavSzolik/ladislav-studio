@@ -4,58 +4,79 @@ import { getCollection } from "astro:content";
 const paintings = await getCollection("paintings");
 const pageTitle = "Ladislav's studio";
 const googleMapLink =
-  "https://www.google.ch/maps/place/Z%C3%BCrcher+Gemeinschaftszentren+GZ+Oerlikon/@47.4077972,8.5457483,17z/data=!3m1!4b1!4m6!3m5!1s0x47900a8724770265:0xa8f0c252259ab770!8m2!3d47.4077972!4d8.5457483!16s%2Fg%2F12qg85q4n?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D";
+    "https://www.google.ch/maps/place/Z%C3%BCrcher+Gemeinschaftszentren+GZ+Oerlikon/@47.4077972,8.5457483,17z/data=!3m1!4b1!4m6!3m5!1s0x47900a8724770265:0xa8f0c252259ab770!8m2!3d47.4077972!4d8.5457483!16s%2Fg%2F12qg85q4n?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <main class="main-container">
-    <div class="container page-section">
-      <div class="section-header">
-        <h2>Exhibition GZ Oerlikon</h2>
+    <main class="main-container">
+        <div class="container page-section">
+            <div class="section-header">
+                <h2>Exhibition GZ Oerlikon</h2>
 
-        <p>
-          These paintings are moments of pause, quiet reflections on the beauty that exists when we stop rushing. Each
-          piece captures a rhythm of life: unhurried, observant, and filled with light. They invite the viewer to
-          breathe, to look closely, and to rediscover the stillness that often hides in plain sight.
-        </p>
-        <div class="exhibition-dates">
-          <p>Dates</p>
-          <p>From 10.01.2026 until 27.02.2026</p>
-        </div>
-        <div class="exhibition-address">
-          <p>Exhibition Address</p>
-          <p>GZ Oerlikon, Gubelstrasse 10, 8050 Zürich</p>
-          <p><a href={googleMapLink} target="_blank">Open in Google Maps</a></p>
-        </div>
-      </div>
+                <p>
+                    These paintings are moments of pause, quiet reflections on
+                    the beauty that exists when we stop rushing. Each piece
+                    captures a rhythm of life: unhurried, observant, and filled
+                    with light. They invite the viewer to breathe, to look
+                    closely, and to rediscover the stillness that often hides in
+                    plain sight.
+                </p>
+                <div class="exhibition-dates">
+                    <p>Dates</p>
+                    <p>From 10.01.2026 until 27.02.2026</p>
+                </div>
+                <div class="exhibition-address">
+                    <p>Exhibition Address</p>
+                    <p>GZ Oerlikon, Gubelstrasse 10, 8050 Zürich</p>
+                    <p>
+                        <a href={googleMapLink} target="_blank"
+                            >Open in Google Maps</a>
+                    </p>
+                </div>
+            </div>
 
-      <!-- Gallery Grid  -->
-      <div class="gallery-grid">
-        {
-          paintings.map(
-            (painting) =>
-              painting.data.visible && (
-                <a href={`/paintings/${painting.id}/`} class="gallery-item">
-                  <div class="gallery-item-image">
-                    <img class="gallery-item-img" src={painting.data.keyImage} alt={painting.data.title} />
-                    <div class="gallery-overlay">
-                      <div>
-                        <h3>{painting.data.title}</h3>
-                        <p>{painting.data.year}</p>
-                        <p>{painting.data.dimensions}</p>
-                      </div>
-                      <p>
-                        CHF <span class="price">{painting.data.price}</span>
-                      </p>
-                      {painting.data.isSold && <span class="sold-tag">Sold</span>}
-                    </div>
-                  </div>
-                </a>
-              )
-          )
-        }
-      </div>
-      <p class="many-more">And many more to come...</p>
-    </div>
-  </main>
+            <!-- Gallery Grid  -->
+            <div class="gallery-grid">
+                {
+                    paintings.map(
+                        (painting) =>
+                            painting.data.visible && (
+                                <a
+                                    href={`/paintings/${painting.id}/`}
+                                    class="gallery-item"
+                                >
+                                    <div class="gallery-item-image">
+                                        <img
+                                            class="gallery-item-img"
+                                            src={painting.data.keyImage}
+                                            alt={painting.data.title}
+                                        />
+                                        <div class="gallery-overlay">
+                                            <div>
+                                                <h3>{painting.data.title}</h3>
+                                                <p>{painting.data.year}</p>
+                                                <p>
+                                                    {painting.data.dimensions}
+                                                </p>
+                                            </div>
+                                            <p>
+                                                CHF{" "}
+                                                <span class="price">
+                                                    {painting.data.price}
+                                                </span>
+                                            </p>
+                                            {painting.data.isSold && (
+                                                <span class="sold-tag">
+                                                    Sold
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
+                                </a>
+                            ),
+                    )
+                }
+            </div>
+        </div>
+    </main>
 </BaseLayout>

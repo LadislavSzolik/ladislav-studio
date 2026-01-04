@@ -1,7 +1,7 @@
 ---
 title: 'The door that waits'
-price: 60
-dimensions: '40 x 40 cm'
+price: 70
+dimensions: '30 x 30 cm'
 mediums: Acrylic on canvas
 year: 2025
 keyImage: '/images/door/door-01.webp'

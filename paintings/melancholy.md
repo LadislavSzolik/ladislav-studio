@@ -1,7 +1,7 @@
 ---
 title: 'Summer melancholy'
-price: 189
-dimensions: '40x40'
+price: 500
+dimensions: '40 width x 60 height cm'
 mediums: Acrylic on canvas
 year: 2025
 keyImage: '/images/melancholy/melancholy-01.webp'

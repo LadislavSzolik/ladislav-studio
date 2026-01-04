@@ -1,7 +1,7 @@
 ---
 title: 'The Book and the Breeze'
-price: 119
-dimensions: '40x40'
+price: 80
+dimensions: '30 x 30 cm'
 mediums: Acrylic on canvas
 year: 2025
 keyImage: '/images/afternoon-solitude/afternoon-solitude-01.webp'

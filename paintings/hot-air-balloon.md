@@ -1,12 +1,13 @@
 ---
 title: 'Journey beyond the horizon'
-price: 99
-dimensions: '40 W x 40 H cm'
+price: 700
+dimensions: '50 width x 70 height cm'
 mediums: Acrylic on canvas
 year: 2025
-keyImage: '/images/placeholder.webp'
+keyImage: '/images/hot-air-balloon/hot-air-balloon-01.webp'
 detailImages: 
-   - '/images/placeholder.webp'
+  - '/images/hot-air-balloon/hot-air-balloon-01.webp'
+  - '/images/hot-air-balloon/hot-air-balloon-02.webp'
 isSold: false
 visible: true
 ---

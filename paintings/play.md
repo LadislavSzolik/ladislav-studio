@@ -1,7 +1,7 @@
 ---
 title: 'Play'
 price: 900
-dimensions: '40x40'
+dimensions: '70 width x 40 height cm'
 mediums: Acrylic on canvas
 year: 2025
 keyImage: '/images/play/play-01.webp'

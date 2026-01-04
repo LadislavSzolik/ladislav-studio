@@ -1,12 +1,13 @@
 ---
 title: 'Transclucent moments'
-price: 99
-dimensions: '40 W x 40 H cm'
+price: 120
+dimensions: '40 width x 50 height cm'
 mediums: Acrylic on canvas
 year: 2025
-keyImage: '/images/placeholder.webp'
+keyImage: '/images/bubbles/bubbles-01.webp'
 detailImages: 
-   - '/images/placeholder.webp'
+  - '/images/bubbles/bubbles-01.webp'
+  - '/images/bubbles/bubbles-02.webp'
 isSold: false
 visible: true
 ---
