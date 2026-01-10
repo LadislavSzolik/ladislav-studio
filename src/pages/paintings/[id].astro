@@ -3,11 +3,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import DetailSection from "../../components/DetailSection.astro";
 import { getCollection, render } from "astro:content";
 export async function getStaticPaths() {
-  const paintings = await getCollection("paintings");
-  return paintings.map((painting) => ({
-    params: { id: painting.id },
-    props: { painting },
-  }));
+    const paintings = await getCollection("paintings");
+    return paintings.map((painting) => ({
+        params: { id: painting.id },
+        props: { painting },
+    }));
 }
 
 const { painting } = Astro.props;
@@ -16,54 +16,79 @@ const pageTitle = painting.data.title;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <main class="main-container">
-    <div class="container">
-      <div class="detail-container">
-        <div class="image-thumbnail-container">
-          <!-- Key Image -->
-          <div class="key-image-container">
-            <img id="mainImage" src={painting.data.keyImage} alt={`Detail of ${painting.data.title}`} />
-          </div>
-          <!-- Thumbnails -->
-          {
-            painting.data.detailImages.length > 1 && (
-              <div class="thumbnail-gallery">
-                {painting.data.detailImages.map((image) => (
-                  <button class="thumbnail-button" data-src={image} data-alt={painting.data.title}>
-                    <img src={image} alt={`Detail of ${painting.data.title}`} />
-                  </button>
-                ))}
-              </div>
-            )
-          }
+    <main class="main-container">
+        <div class="container">
+            <div class="detail-container">
+                <div class="image-thumbnail-container">
+                    <!-- Key Image -->
+                    <div class="key-image-container">
+                        <img
+                            id="mainImage"
+                            src={painting.data.keyImage}
+                            alt={`Detail of ${painting.data.title}`}
+                        />
+                    </div>
+                    <!-- Thumbnails -->
+                    {
+                        painting.data.detailImages.length > 1 && (
+                            <div class="thumbnail-gallery">
+                                {painting.data.detailImages.map((image) => (
+                                    <button
+                                        class="thumbnail-button"
+                                        data-src={image}
+                                        data-alt={painting.data.title}
+                                    >
+                                        <img
+                                            src={image}
+                                            alt={`Detail of ${painting.data.title}`}
+                                        />
+                                    </button>
+                                ))}
+                            </div>
+                        )
+                    }
+                </div>
+
+                <!-- Details sidebar -->
+                <div class="details-sidebar">
+                    <!-- Title -->
+                    <div>
+                        <h1 class="detail-title">{painting.data.title}</h1>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="price-section">
+                        <p class="price-label">Price</p>
+                        <p class="price-value">CHF {painting.data.price}</p>
+                        <a
+                            href="mailto:ladislav.studio@proton.me?subject=Buy%20painting"
+                            class="buy-button"
+                            title="Email"
+                            aria-label="Send email"
+                        >
+                            Buy
+                        </a>
+                    </div>
+
+                    <!-- Dimensions -->
+                    <DetailSection
+                        label={"Dimensions"}
+                        value={painting.data.dimensions}
+                    />
+
+                    <!-- Medium -->
+                    <DetailSection
+                        label={"Mediums"}
+                        value={painting.data.mediums}
+                    />
+
+                    <!-- Description -->
+                    <div class="description-box">
+                        <p class="desc-label">About the painting</p>
+                        <p class="desc-value"><Content /></p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Details sidebar -->
-        <div class="details-sidebar">
-          <!-- Title -->
-          <div>
-            <h1 class="detail-title">{painting.data.title}</h1>
-          </div>
-
-          <!-- Price -->
-          <div class="price-section">
-            <p class="price-label">Price</p>
-            <p class="price-value">CHF {painting.data.price}</p>
-          </div>
-
-          <!-- Dimensions -->
-          <DetailSection label={"Dimensions"} value={painting.data.dimensions} />
-
-          <!-- Medium -->
-          <DetailSection label={"Mediums"} value={painting.data.mediums} />
-
-          <!-- Description -->
-          <div class="description-box">
-            <p class="desc-label">About the painting</p>
-            <p class="desc-value"><Content /></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
+    </main>
 </BaseLayout>

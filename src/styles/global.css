@@ -390,6 +390,22 @@ header h1 {
     color: var(--accent);
 }
 
+/* Buy */
+
+.buy-button {
+    font-size: 1.4rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--accent-foreground);
+    background-color: var(--accent);
+    padding-inline: 1rem;
+    padding-block: 1 rem;
+    transition: background-color 0.3s ease;
+}
+.buy-button:hover {
+    background-color: oklch(0.65 0.18 50 /0.8);
+}
+
 /* Description Box */
 .description-box {
     & .desc-label {

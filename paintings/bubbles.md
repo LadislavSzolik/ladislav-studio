@@ -1,5 +1,5 @@
 ---
-title: 'Transclucent moments'
+title: 'Translucent moments'
 price: 120
 dimensions: '40 width x 50 height cm'
 mediums: Acrylic on canvas
@@ -12,4 +12,4 @@ isSold: false
 visible: true
 ---
 
-tbd
+Coming soon..

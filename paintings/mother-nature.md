@@ -12,4 +12,4 @@ isSold: false
 visible: true
 ---
 
-tbd
+Coming soon..
