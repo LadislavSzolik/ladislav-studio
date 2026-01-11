@@ -12,4 +12,4 @@ isSold: false
 visible: true
 ---
 
-Coming soon..
+Bubbles have such a brief existence. They are born, we get to admire them, and then they vanish. For me, bubbles serve as a reminder not to become overly attached to events and things in our lives. Just like bubbles, they come and go, and we should be here to enjoy these moments.
