@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 const { painting } = Astro.props;
 const { Content } = await render(painting);
 const pageTitle = painting.data.title;
+const isSold = painting.data.isSold;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -49,6 +50,9 @@ const pageTitle = painting.data.title;
           <div class="price-section">
             <p class="price-label">Price</p>
             <p class="price-value">CHF {painting.data.price}</p>
+            {isSold ? 
+            <p class="sold">Sold!</p>
+            :
             <a
               href=`mailto:ladislav.studio@proton.me?subject=Purchase%20Inquiry:%20${encodeURIComponent(painting.data.title)}`
               class="buy-button"
@@ -57,7 +61,8 @@ const pageTitle = painting.data.title;
             >
               Purchase Inquiry
             </a>
-            <p class="price-info">Interested in purchasing? This opens an email inquiry.</p>
+            <p class="price-info">Interested in purchasing? This opens an email inquiry.</p>                        
+            }
           </div>
 
           <!-- Dimensions -->

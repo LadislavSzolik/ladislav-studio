@@ -8,7 +8,7 @@ keyImage: '/images/afternoon-solitude/afternoon-solitude-01.webp'
 detailImages: 
   - '/images/afternoon-solitude/afternoon-solitude-01.webp'
   - '/images/afternoon-solitude/afternoon-solitude-02.webp'  
-isSold: false
+isSold: true
 visible: true
 ---
 

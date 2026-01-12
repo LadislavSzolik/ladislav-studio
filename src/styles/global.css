@@ -12,6 +12,7 @@
   --accent: oklch(0.65 0.18 50);
   --accent-foreground: oklch(1 0 0);
   --border: oklch(0.92 0.01 70);
+  --attention: oklch(0.5082 0.1372 15.42);
   --radius: 0.625rem;
 }
 
@@ -236,6 +237,7 @@ header h1 {
   & h3 {
     color: var(--background);
     font-size: 1.125rem;
+    line-height: 1.2;
   }
   & p {
     color: var(--muted);
@@ -244,6 +246,11 @@ header h1 {
   & .price {
     font-size: 1.8rem;
     font-weight: 700;
+  }
+  & .sold {
+    color: var(--background);
+    border-color: var(--background);
+    margin-bottom: 1rem;
   }
 }
 
@@ -354,6 +361,7 @@ header h1 {
 
 .detail-title {
   font-size: 2rem;
+  line-height: 2.4rem;
   font-weight: 700;
   color: var(--foreground);
   margin-bottom: 0.5rem;
@@ -408,6 +416,17 @@ header h1 {
 }
 .buy-button:hover {
   background-color: oklch(0.65 0.18 50 /0.8);
+}
+
+/* Sold text */
+.sold {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--attention);
+  border: 2px solid var(--attention);
+  padding: 0.2rem 1.2rem;
+  border-radius: 4px;
 }
 
 /* Description Box */

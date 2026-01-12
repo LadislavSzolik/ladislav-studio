@@ -12,4 +12,4 @@ isSold: false
 visible: true
 ---
 
-Coming soon..
+We often emphasize the importance of a strong start and motivate each other to persevere. However, there are moments when we accomplish something significant, and it’s time to relax and enjoy the conclusion of a chapter in our lives.

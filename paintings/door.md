@@ -13,4 +13,4 @@ isSold: false
 visible: true
 ---
 
-Coming soon..
+An old door like this raises so many questions in my mind. What lies on the other side? What secrets does it guard? On the other hand it shows with ease the emotions of those who cross it—anger, haste, or calm. Such a  simple structure holds so much information. 

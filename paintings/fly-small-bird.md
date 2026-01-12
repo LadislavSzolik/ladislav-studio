@@ -12,4 +12,4 @@ isSold: false
 visible: true
 ---
 
-Coming soon..
+Growing up in the countryside, I’ve witnessed many baby birds venturing away from their nests like the one on the painting. Despite her fragility, she shows  bravery in leaving her home. While we can gently pick her up, we must stop from forcing her to fly until the appropriate time arrives.
